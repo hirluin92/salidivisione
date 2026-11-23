@@ -202,7 +202,7 @@ export function Calculator({
 
           <div className="mt-5">
             <label htmlFor="nick" className="mb-2 block font-semibold">
-              {input.service === "coach" ? "Su cosa giochi? " : "ID EA / nickname "}
+              ID EA / nickname{" "}
               <span className="font-normal text-muted">(facoltativo, lo aggiungiamo al messaggio)</span>
             </label>
             <input
@@ -211,7 +211,7 @@ export function Calculator({
               autoComplete="off"
               value={nick}
               onChange={(e) => setNick(e.target.value)}
-              placeholder={input.service === "coach" ? "PC, PlayStation o Xbox" : "Il tuo ID EA"}
+              placeholder="Il tuo ID EA"
               className={`${field} border-line3`}
             />
           </div>

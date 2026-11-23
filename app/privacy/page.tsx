@@ -3,7 +3,7 @@ import { buildMetadata } from "@/lib/seo";
 
 export const metadata = buildMetadata({
   title: "Privacy policy | SaliDivisione",
-  description: "Informativa sulla privacy di SaliDivisione: dati raccolti, lista d'attesa console e analytics senza cookie.",
+  description: "Informativa sulla privacy di SaliDivisione: dati degli ordini su WhatsApp e analytics senza cookie.",
   path: "/privacy",
 });
 
@@ -24,10 +24,6 @@ export default function Privacy() {
         <p>Testo segnaposto: da completare.</p>
         <h2>Dati che raccogliamo</h2>
         <ul>
-          <li>
-            <strong>Lista d&apos;attesa console:</strong> email e console scelta, solo con consenso
-            esplicito, tramite Brevo, con conferma via email (double opt-in).
-          </li>
           <li>
             <strong>Ordini:</strong> i dati che ci invii su WhatsApp per eseguire il servizio, che
             eliminiamo a fine ordine.

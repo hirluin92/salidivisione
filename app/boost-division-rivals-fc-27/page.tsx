@@ -46,7 +46,7 @@ export default function BoostPage() {
             h2: "Come funziona il boost di divisione",
             paragraphs: [
               "Il boost Rivals di SaliDivisione è un servizio per chi vuole salire di divisione in Division Rivals su FC 27 senza passare le serate a giocare partite. Scegli la divisione da cui parti e quella che vuoi raggiungere, scrivi su WhatsApp con il messaggio già pronto e concordi pagamento e orario. Da quel momento un nostro player italiano gioca le partite necessarie dal tuo account, sul PC, e tu guardi tutto in diretta.",
-              "Il servizio è solo per PC: su FC 27 ogni piattaforma ha un club Ultimate Team separato e il nostro booster gioca da PC. Se giochi su PlayStation o Xbox puoi usare il coaching, oppure iscriverti alla lista d'attesa per il boost console con il 15% di sconto sul primo ordine.",
+              "Il servizio è solo per PC: su FC 27 ogni piattaforma ha un club Ultimate Team separato e il nostro booster gioca da PC. Se preferisci giocare tu, c'è il coaching live.",
             ],
           },
           {

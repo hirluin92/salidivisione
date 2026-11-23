@@ -26,7 +26,7 @@ export default function Termini() {
         <p>
           Boost di divisione e ricompense settimanali sono disponibili solo per PC. Le ricompense
           settimanali comprendono 10 vittorie; l&apos;eventuale salita di divisione è inclusa nel
-          servizio. Il coaching vale per PC, PlayStation e Xbox.
+          servizio. Anche il coaching è disponibile solo per PC.
         </p>
         <h2>Ordini e pagamenti</h2>
         <p>

@@ -7,7 +7,7 @@ const PATH = "/coaching-fc-27";
 export const metadata = buildMetadata({
   title: "Coaching FC 27 live su Discord | SaliDivisione",
   description:
-    "Coaching FC 27 su PC, PlayStation e Xbox: giochi tu, un player ti segue su Discord. Da 25 € l'ora, 3 ore a 65 €. Nessuna password condivisa.",
+    "Coaching FC 27 su PC: giochi tu, un player ti segue su Discord. Da 25 € l'ora, 3 ore a 65 €. Nessuna password condivisa.",
   path: PATH,
 });
 
@@ -19,20 +19,20 @@ export default function CoachingPage() {
         { name: "Home", path: "/" },
         { name: "Coaching live", path: PATH },
       ]}
-      eyebrow="Coaching live · PC, PlayStation, Xbox"
+      eyebrow="Coaching live · Solo PC"
       h1="Coaching FC 27 live: migliora giocando con noi"
-      lead="Giochi tu dal tuo account, un nostro player ti segue in chiamata Discord e ti dice cosa cambiare. Funziona su PC, PlayStation e Xbox, senza condividere password."
+      lead="Giochi tu dal tuo account, un nostro player ti segue in chiamata Discord e ti dice cosa cambiare. Su PC, senza condividere password."
       highlights={[
         "Da 25 € l'ora",
         "3 ore a 65 €",
-        "PC · PlayStation · Xbox",
+        "Su PC",
         "Nessun rischio per l'account",
       ]}
       preset={{ service: "coach", hours: 1 }}
       schema={{
         name: "Coaching live FC 27",
         description:
-          "Sessioni di coaching live su Discord per Division Rivals su FC 27, per PC, PlayStation e Xbox.",
+          "Sessioni di coaching live su Discord per Division Rivals su FC 27, per PC.",
         lowPrice: 25,
         highPrice: 105,
         offerCount: 5,
@@ -42,7 +42,7 @@ export default function CoachingPage() {
           h2: "Come funziona il coaching FC 27",
           paragraphs: [
             "Il coaching live di SaliDivisione è pensato per chi vuole migliorare nelle partite di Division Rivals su FC 27 invece di farsi giocare le partite. Ti colleghi a una chiamata Discord con uno dei nostri player, giochi dal tuo account e dalla tua piattaforma e lui ti segue in diretta: commenta le scelte, individua gli errori che si ripetono e ti suggerisce cosa cambiare.",
-            "Dato che giochi sempre tu, nessuno accede al tuo account e non condividi nessuna password. Per questo il coaching è l'unico servizio valido su PC, PlayStation e Xbox, e il solo senza il rischio legato all'accesso di terzi.",
+            "Dato che giochi sempre tu, nessuno accede al tuo account e non condividi nessuna password. Per questo il coaching è il solo servizio senza il rischio legato all'accesso di terzi.",
           ],
         },
         {
@@ -67,7 +67,7 @@ export default function CoachingPage() {
         {
           h2: "Coaching o boost: cosa scegliere",
           paragraphs: [
-            "Se vuoi arrivare in fretta a una divisione e non ti interessa giocare, il boost è più adatto, ma è solo per PC. Se invece vuoi diventare più forte e mantenere i risultati nel tempo, o giochi su console, il coaching è la scelta giusta. Molti iniziano dal coaching e passano poi al boost nelle settimane in cui non hanno tempo.",
+            "Se vuoi arrivare in fretta a una divisione e non ti interessa giocare, il boost è più adatto. Se invece vuoi diventare più forte e mantenere i risultati nel tempo, il coaching è la scelta giusta. Molti iniziano dal coaching e passano poi al boost nelle settimane in cui non hanno tempo.",
           ],
         },
       ]}

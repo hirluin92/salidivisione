@@ -70,8 +70,8 @@ describe("coaching", () => {
       25, 50, 65, 85, 105,
     ]);
   });
-  it("non riporta PC nel riepilogo", () => {
-    expect(q({ service: "coach" }).summary).not.toContain("PC");
+  it("riporta PC nel riepilogo (tutti i servizi sono solo PC)", () => {
+    expect(q({ service: "coach" }).summary).toBe("Coaching live · 1 ora · PC");
   });
 });
 

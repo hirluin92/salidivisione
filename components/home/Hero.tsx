@@ -86,7 +86,7 @@ export function Hero() {
         <div className="min-w-0 flex-[1_1_540px]">
           <p className="m-0 mb-5 inline-flex flex-wrap items-center gap-2.5 text-sm font-semibold uppercase tracking-[0.06em] text-fg2">
             <span className="inline-block size-2 rounded-full bg-accent" />
-            Boost Division Rivals FC 27 · PC · Coaching anche su PS5 e Xbox
+            Boost Division Rivals FC 27 · Solo PC
           </p>
           <p className="m-0 mb-[18px] flex w-fit max-w-full flex-wrap items-baseline gap-2 rounded-full border border-[#2A3442] bg-surface px-4 py-2 text-[15px] text-fg2">
             Boost da <span className="display text-[22px] text-accent">15 €</span> a divisione ·
@@ -100,7 +100,7 @@ export function Hero() {
           <p className="m-0 mb-9 max-w-[560px] text-xl text-fg2">
             Player italiani giocano le tue partite di Division Rivals su FC 27 per PC. Una divisione
             di solito in 1–2 ore, e guardi tutto in diretta,{" "}
-            <strong className="text-fg">gratis</strong>. Giochi su console? Ti seguiamo in coaching.
+            <strong className="text-fg">gratis</strong>. Preferisci giocare tu? Ti seguiamo in coaching.
           </p>
           <div className="flex flex-wrap gap-3.5">
             <Link

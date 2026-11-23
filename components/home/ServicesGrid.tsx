@@ -23,8 +23,7 @@ export function ServicesGrid() {
           <span className="text-accent">FC 27</span>
         </h2>
         <p className="m-0 max-w-[380px] text-[17px] text-muted">
-          Boost su PC, dalla Divisione 10 fino all&apos;Élite. Su PlayStation e Xbox ti alleniamo in
-          coaching.
+          Tutti i servizi sono su PC, dalla Divisione 10 fino all&apos;Élite.
         </p>
       </div>
       <div className="grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-5">
@@ -90,7 +89,7 @@ export function ServicesGrid() {
           </div>
           <h3 className="display m-0 text-[32px] tracking-[0.01em]">Coaching live</h3>
           <p className="m-0 text-[13px] font-bold uppercase tracking-[0.06em] text-accent">
-            PC · PlayStation · Xbox
+            Solo PC
           </p>
           <p className="m-0 grow text-fg2">
             Giochi tu dal tuo account, un nostro player ti segue in chiamata Discord. Nessuna

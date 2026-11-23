@@ -35,7 +35,7 @@ export const generalFaq: FaqItem[] = [
   },
   {
     q: "Su quali piattaforme?",
-    a: "Il boost di divisione e le ricompense settimanali sono per PC: su FC 27 ogni piattaforma ha un club Ultimate Team separato. Il coaching funziona su PC, PlayStation e Xbox, perché giochi tu dalla tua console. Il boost per console arriverà presto: lascia il contatto per essere avvisato.",
+    a: "Tutti i servizi sono solo per PC: su FC 27 ogni piattaforma ha un club Ultimate Team separato e il nostro team gioca da PC.",
   },
   {
     q: "Posso giocare mentre fate il boost?",
@@ -57,8 +57,8 @@ export const boostFaq: FaqItem[] = [
     a: "Sì: con l'extra Priorità (+20%) iniziamo entro 2 ore dalla conferma del pagamento e della disponibilità.",
   },
   {
-    q: "Il boost vale anche per PlayStation e Xbox?",
-    a: "Non ancora: il boost è solo per PC, perché su FC 27 ogni piattaforma ha un club Ultimate Team separato. Per console c'è il coaching, e puoi iscriverti alla lista d'attesa con il 15% di sconto sul primo ordine.",
+    q: "Su quale piattaforma gioca il boost?",
+    a: "Solo su PC: su FC 27 ogni piattaforma ha un club Ultimate Team separato, quindi il nostro booster gioca dal tuo account su PC.",
   },
   {
     q: "È sicuro per il mio account?",
@@ -99,8 +99,8 @@ export const coachFaq: FaqItem[] = [
     a: "25 € per 1 ora, 50 € per 2 ore, 65 € per 3 ore, 85 € per 4 ore e 105 € per 5 ore: da 3 ore il prezzo orario scende.",
   },
   {
-    q: "Funziona su PlayStation e Xbox?",
-    a: "Sì, il coaching è l'unico servizio valido per PC, PlayStation e Xbox, perché giochi tu dalla tua console.",
+    q: "Su quale piattaforma si fa il coaching?",
+    a: "Su PC: giochi tu dal tuo account e noi ti seguiamo in chiamata Discord.",
   },
   {
     q: "Serve avere un livello minimo?",

@@ -10,10 +10,8 @@ export function homeWaUrl(): string {
 }
 
 export function orderMessage(q: Quote, nick = ""): string {
-  const coach = q.input.service === "coach";
   const promo = q.input.promo ? ` (codice ${PROMO_CODE})` : "";
-  const tail = coach ? " Gioco su: " : " ID EA / nickname: ";
-  return `Ciao SaliDivisione! Vorrei ordinare: ${q.summary}${promo} – ${formatEURPlain(q.total)}.${tail}${nick.trim()}`;
+  return `Ciao SaliDivisione! Vorrei ordinare: ${q.summary}${promo} – ${formatEURPlain(q.total)}. ID EA / nickname: ${nick.trim()}`;
 }
 
 export function orderUrl(q: Quote, nick = ""): string {

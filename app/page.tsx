@@ -8,7 +8,6 @@ import { Comparison } from "@/components/home/Comparison";
 import { Verify } from "@/components/home/Verify";
 import { HowItWorks } from "@/components/home/HowItWorks";
 import { Safety } from "@/components/home/Safety";
-import { ConsoleWaitlist } from "@/components/home/ConsoleWaitlist";
 import { GuidesList } from "@/components/home/GuidesList";
 import { FinalCta } from "@/components/home/FinalCta";
 import { Faq } from "@/components/ui/Faq";
@@ -44,7 +43,6 @@ export default function Home() {
       <Verify />
       <HowItWorks />
       <Safety />
-      <ConsoleWaitlist />
       <GuidesList />
       <section id="faq" className="mx-auto max-w-[900px] px-6 pb-[72px] pt-24">
         <h2 className="h2 mb-8">Domande frequenti</h2>

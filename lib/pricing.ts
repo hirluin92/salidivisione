@@ -81,7 +81,7 @@ export interface Quote {
   guaranteeHours: number | null;
   /** Partite risparmiate rispetto a giocarle da soli (stima). */
   wins: number | null;
-  platformLabel: string | null;
+  platformLabel: string;
 }
 
 export const DEFAULT_INPUT: QuoteInput = {
@@ -149,7 +149,7 @@ export function quote(raw: QuoteInput): Quote {
   let hoursEstimate: number | null = null;
   let guaranteeHours: number | null = null;
   let wins: number | null = null;
-  let platformLabel: string | null = "PC";
+  const platformLabel = "PC";
 
   if (service === "climb") {
     base = climbBase(from, to);
@@ -172,13 +172,12 @@ export function quote(raw: QuoteInput): Quote {
     note = "Di solito in 3–4 ore · garantito entro 24 ore, sempre prima del giovedì.";
   } else {
     base = coachBase(hours);
-    platformLabel = null;
     summary = `Coaching live · ${hours} ${hours === 1 ? "ora" : "ore"}`;
     note = "Su appuntamento, in chiamata Discord. Da 3 ore il prezzo orario scende.";
   }
 
   const total = applyExtras(base, input.priority, input.promo);
-  if (platformLabel) summary += ` · ${platformLabel}`;
+  summary += ` · ${platformLabel}`;
   if (input.priority) summary += " · Priorità";
 
   return { input, base, total, summary, note, hoursEstimate, guaranteeHours, wins, platformLabel };
