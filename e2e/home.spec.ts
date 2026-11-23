@@ -13,6 +13,7 @@ test("calcolatore: 10 → Élite senza extra e senza sconto = 184 €", async ({
   await page.getByLabel("Primo ordine", { exact: false }).uncheck();
   await page.locator("#fromDiv").selectOption({ label: "Divisione 10" });
   await page.locator("#toDiv").selectOption({ label: "Élite" });
+  await page.locator("#nick").fill("MioID");
   await expect(page.getByTestId("total")).toHaveText(/184,00\s*€/);
 
   const href = (await page.getByTestId("wa-order").getAttribute("href")) ?? "";
@@ -20,7 +21,20 @@ test("calcolatore: 10 → Élite senza extra e senza sconto = 184 €", async ({
   const text = decodeURIComponent(href.split("text=")[1]).replace(/ /g, " ");
   expect(text).toContain("184,00 €");
   expect(text).toContain("Divisione 10 → Élite");
-  expect(text).toContain("ID EA / nickname:");
+  expect(text).toContain("ID EA / nickname: MioID");
+});
+
+test("l'ID EA è obbligatorio per ordinare", async ({ page }) => {
+  await page.goto("/");
+  const order = page.getByTestId("wa-order");
+  // senza ID EA non c'è nessun link WhatsApp
+  await expect(order).toHaveText(/Inserisci l'ID EA/);
+  expect(await order.getAttribute("href")).toBeNull();
+  await order.click();
+  await expect(page.locator("#nick-err")).toContainText("ID EA");
+  // con l'ID EA il link compare
+  await page.locator("#nick").fill("AB");
+  await expect(page.getByTestId("wa-order")).toHaveAttribute("href", /wa\.me/);
 });
 
 test("il messaggio WhatsApp include il nickname", async ({ page }) => {
@@ -54,4 +68,7 @@ test("barra mobile col totale sotto i 720px", async ({ page, isMobile }) => {
   await page.goto("/");
   await expect(page.locator(".mob-bar")).toBeVisible();
   await expect(page.locator(".wa-float")).toBeHidden();
+  await expect(page.locator(".mob-bar")).toContainText("Inserisci ID EA");
+  await page.locator("#nick").fill("MioID");
+  await expect(page.locator(".mob-bar").getByRole("link", { name: /Ordina su WhatsApp/ })).toBeVisible();
 });

@@ -19,9 +19,11 @@ export default function Termini() {
       <h1 className="display mb-6 mt-8 text-[clamp(40px,5.4vw,68px)] leading-[0.98]">
         Termini di servizio
       </h1>
-      {/* TODO: far rivedere il testo definitivo a un consulente legale. */}
       <div className="prose-sd">
-        <p>Testo segnaposto: da completare. Qui sotto le condizioni commerciali già previste.</p>
+        <p>
+          Ordinando un servizio su SaliDivisione.it accetti queste condizioni. Il sito è una vetrina:
+          l&apos;ordine si completa su WhatsApp.
+        </p>
         <h2>Servizi</h2>
         <p>
           Boost di divisione e ricompense settimanali sono disponibili solo per PC. Le ricompense
@@ -30,8 +32,15 @@ export default function Termini() {
         </p>
         <h2>Ordini e pagamenti</h2>
         <p>
-          L&apos;ordine parte da WhatsApp e il pagamento si concorda lì. Il pagamento è anticipato al
-          100%, senza acconto, con PayPal o bonifico istantaneo. Non accettiamo carta diretta.
+          L&apos;ordine parte da WhatsApp e il pagamento si concorda lì. Per ordinare serve indicare il
+          tuo ID EA o nickname. Il pagamento è anticipato al 100%, senza acconto, con PayPal o
+          bonifico istantaneo. Non accettiamo carta diretta.
+        </p>
+        <h2>Codice sconto PRIMO10</h2>
+        <p>
+          Il codice PRIMO10 dà il 10% di sconto sul primo ordine e vale una sola volta per cliente.
+          Lo verifichiamo su WhatsApp: se risulta già usato, l&apos;ordine viene confermato al prezzo
+          pieno. Gli sconti non sono cumulabili con altri codici.
         </p>
         <h2>Tempi garantiti e rimborsi</h2>
         <ul>
@@ -46,7 +55,14 @@ export default function Termini() {
         <h2>Rischi legati all&apos;accesso di terzi</h2>
         <p>
           Far giocare un&apos;altra persona sul proprio account va contro i termini di EA: un rischio
-          esiste sempre. TODO: completare con clausole di accettazione del rischio.
+          esiste sempre. Riduciamo il rischio giocando dall&apos;Italia, con il tuo codice di
+          verifica e senza toccare il mercato, ma non possiamo escludere sanzioni da parte di EA.
+          Ordinando accetti questo rischio. Se vuoi evitarlo, scegli il coaching, in cui giochi tu.
+        </p>
+        <h2>Durante il servizio</h2>
+        <p>
+          Mentre giochiamo non devi accedere all&apos;account: un doppio accesso disconnette entrambi.
+          A fine ordine ti consigliamo di cambiare la password.
         </p>
         <h2>Stream della sessione</h2>
         <p>Lo stream privato della sessione è gratuito e incluso in ogni ordine.</p>

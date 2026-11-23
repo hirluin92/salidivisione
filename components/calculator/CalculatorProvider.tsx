@@ -22,6 +22,11 @@ type Ctx = {
   input: QuoteInput;
   q: Quote;
   nick: string;
+  /** L'ID EA è obbligatorio per ordinare */
+  nickOk: boolean;
+  nickTouched: boolean;
+  /** Porta l'utente sul campo ID EA (o sul calcolatore) e mostra l'errore */
+  requestNick: () => void;
   waLink: string;
   update: (patch: Partial<QuoteInput>) => void;
   setNick: (v: string) => void;
@@ -54,7 +59,21 @@ function fromSearch(search: string): Partial<QuoteInput> | null {
 
 export function CalculatorProvider({ children }: { children: ReactNode }) {
   const [input, setInput] = useState<QuoteInput>(DEFAULT_INPUT);
-  const [nick, setNick] = useState("");
+  const [nick, setNickRaw] = useState("");
+  const [nickTouched, setNickTouched] = useState(false);
+  const nickOk = nick.trim().length >= 2;
+
+  const setNick = useCallback((v: string) => setNickRaw(v), []);
+  const requestNick = useCallback(() => {
+    setNickTouched(true);
+    const el = document.getElementById("nick");
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth", block: "center" });
+      window.setTimeout(() => (el as HTMLInputElement).focus({ preventScroll: true }), 350);
+    } else {
+      window.location.href = "/#prezzi";
+    }
+  }, []);
 
   // Preventivo condiviso via link (?svc=climb&from=7&to=10)
   useEffect(() => {
@@ -90,6 +109,9 @@ export function CalculatorProvider({ children }: { children: ReactNode }) {
     input: q.input,
     q,
     nick,
+    nickOk,
+    nickTouched,
+    requestNick,
     waLink,
     update,
     setNick,

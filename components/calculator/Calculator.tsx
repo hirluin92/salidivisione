@@ -32,7 +32,11 @@ export function Calculator({
   heading?: string;
   headingLevel?: 1 | 2;
 }) {
-  const { input, q, nick, waLink, update, setNick, shareUrl } = useCalculator();
+  const { input, q, nick, nickOk, nickTouched, requestNick, waLink, update, setNick, shareUrl } =
+    useCalculator();
+  const showNickError = nickTouched && !nickOk;
+  const waClass =
+    "flex min-h-[44px] w-full cursor-pointer items-center justify-center gap-2.5 rounded-full border-0 bg-bg px-5 py-[18px] text-center text-[17px] font-bold text-fg no-underline hover:text-fg";
   const [copied, setCopied] = useState(false);
   const applied = useRef(false);
 
@@ -202,19 +206,31 @@ export function Calculator({
 
           <div className="mt-5">
             <label htmlFor="nick" className="mb-2 block font-semibold">
-              ID EA / nickname{" "}
-              <span className="font-normal text-muted">(facoltativo, lo aggiungiamo al messaggio)</span>
+              ID EA / nickname <span className="text-accent">*</span>{" "}
+              <span className="font-normal text-muted">(obbligatorio, lo aggiungiamo al messaggio)</span>
             </label>
             <input
               id="nick"
               type="text"
+              required
               autoComplete="off"
               value={nick}
               onChange={(e) => setNick(e.target.value)}
+              aria-invalid={showNickError}
+              aria-describedby={showNickError ? "nick-err" : undefined}
               placeholder="Il tuo ID EA"
-              className={`${field} border-line3`}
+              className={`${field} ${showNickError ? "border-[#FFB4A8]" : "border-line3"}`}
             />
+            {showNickError && (
+              <p id="nick-err" role="alert" className="m-0 mt-2 text-sm text-[#FFB4A8]">
+                Inserisci il tuo ID EA per poter ordinare.
+              </p>
+            )}
           </div>
+
+          <p className="m-0 mt-4 text-[13px] text-muted">
+            Il codice {PROMO_CODE} vale una sola volta per cliente ed è verificato da noi su WhatsApp.
+          </p>
         </div>
 
         <div className="flex min-w-0 flex-[1_1_340px] flex-col gap-3.5 bg-accent p-[clamp(28px,4vw,44px)] text-bg">
@@ -239,17 +255,24 @@ export function Calculator({
             </p>
           )}
           <div className="grow" />
-          <a
-            href={waLink}
-            data-testid="wa-order"
-            target="_blank"
-            rel="noopener"
-            onClick={() => trackWhatsApp("calculator", input.service, q.total)}
-            className="flex min-h-[44px] items-center justify-center gap-2.5 rounded-full bg-bg px-5 py-[18px] text-center text-[17px] font-bold text-fg no-underline hover:text-fg"
-          >
-            <ChatIcon color="#C6F432" />
-            Ordina su WhatsApp
-          </a>
+          {nickOk ? (
+            <a
+              href={waLink}
+              data-testid="wa-order"
+              target="_blank"
+              rel="noopener"
+              onClick={() => trackWhatsApp("calculator", input.service, q.total)}
+              className={waClass}
+            >
+              <ChatIcon color="#C6F432" />
+              Ordina su WhatsApp
+            </a>
+          ) : (
+            <button type="button" data-testid="wa-order" onClick={requestNick} className={waClass}>
+              <ChatIcon color="#C6F432" />
+              Inserisci l&apos;ID EA per ordinare
+            </button>
+          )}
           {SITE.discordUrl && (
             <a
               href={SITE.discordUrl}
