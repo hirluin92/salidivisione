@@ -3,8 +3,8 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
-import { GUIDES, guideBySlug } from "@/lib/guides";
-import { articleLd, buildMetadata } from "@/lib/seo";
+import { GUIDES, guideBySlug, guideFaq } from "@/lib/guides";
+import { articleLd, buildMetadata, faqLd } from "@/lib/seo";
 
 export const dynamicParams = false;
 
@@ -21,7 +21,7 @@ export async function generateMetadata({
   const g = guideBySlug(slug);
   if (!g) return {};
   return buildMetadata({
-    title: `${g.title} | SaliDivisione`.length <= 60 ? `${g.title} | SaliDivisione` : g.title,
+    title: g.metaTitle,
     description: g.description,
     path: `/guide/${g.slug}`,
     type: "article",
@@ -34,10 +34,16 @@ export default async function GuidePage({ params }: { params: Promise<{ slug: st
   if (!g) notFound();
   const { default: Content } = await import(`@/content/guide/${slug}.mdx`);
   const path = `/guide/${g.slug}`;
+  const faq = guideFaq(slug);
 
   return (
     <article className="mx-auto max-w-[780px] px-6 pb-16 pt-4">
-      <JsonLd data={articleLd({ title: g.title, description: g.description, path, date: g.date })} />
+      <JsonLd
+        data={[
+          articleLd({ title: g.title, description: g.description, path, date: g.date }),
+          ...(faq.length ? [faqLd(faq)] : []),
+        ]}
+      />
       <Breadcrumbs
         crumbs={[
           { name: "Home", path: "/" },
